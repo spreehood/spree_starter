@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby '3.3.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.2.2.1'
+gem 'rails', '~> 8.0.0'
 
 # Use pg as the database for Active Record
 gem "pg", "~> 1.1"
@@ -107,14 +107,14 @@ gem 'sidekiq'
 gem "devise"
 
 # Spree gems
-spree_opts = '~> 5.0.1'
+spree_opts = '~> 5.1.0.beta'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
 gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
 gem "spree_stripe", '~> 1.2'
-# gem "spree_google_analytics", "~> 1.0"
+gem "spree_google_analytics", "~> 1.0"
 gem "spree_i18n"
 
 # Sentry for error/performance monitoring
