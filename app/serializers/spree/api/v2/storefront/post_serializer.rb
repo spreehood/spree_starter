@@ -10,9 +10,7 @@ module Spree
           attribute :image do |object|
             if object.image.attached?
               {
-                url: Rails.application.routes.url_helpers.rails_blob_url(object.image, only_path: true),
-                width: object.image.metadata[:width],
-                height: object.image.metadata[:height]
+                url: Rails.application.routes.url_helpers.rails_blob_url(object.image, only_path: true)
               }
             end
           end

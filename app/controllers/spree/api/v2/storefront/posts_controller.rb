@@ -3,7 +3,6 @@ module Spree
     module V2
       module Storefront
         class PostsController < Spree::BaseController
-
           def index
             posts = Spree::Post.all
 

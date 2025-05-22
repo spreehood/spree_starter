@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       namespace :v2 do
         namespace :storefront do
           resources :posts, only: [:index, :show]
+          resources :pages, only: [:index, :show]
         end
       end
     end
