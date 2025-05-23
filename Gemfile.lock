@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/spreehood/spree_reviews.git
+  revision: b4604417b693f46a6e1d6a2bfb3b7a2d9866cd4b
+  branch: feature/spree_5
+  specs:
+    spree_reviews (4.0.0)
+      spree (>= 5.0.3)
+      spree_admin (>= 5.0.3)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -863,6 +873,7 @@ DEPENDENCIES
   spree_emails (~> 5.1.0.beta)
   spree_google_analytics (~> 1.0)
   spree_i18n
+  spree_reviews!
   spree_sample (~> 5.1.0.beta)
   spree_storefront (~> 5.1.0.beta)
   spree_stripe (~> 1.2)

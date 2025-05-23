@@ -301,6 +301,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
     t.index ["user_id"], name: "index_spree_exports_on_user_id"
   end
 
+  create_table "spree_feedback_reviews", id: :serial, force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "review_id", null: false
+    t.integer "rating", default: 0
+    t.text "comment"
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.string "locale", default: "en"
+    t.index ["review_id"], name: "index_spree_feedback_reviews_on_review_id"
+    t.index ["user_id"], name: "index_spree_feedback_reviews_on_user_id"
+  end
+
   create_table "spree_gateway_customers", force: :cascade do |t|
     t.string "profile_id", null: false
     t.bigint "payment_method_id", null: false
@@ -867,6 +879,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
     t.jsonb "private_metadata"
     t.string "status", default: "draft", null: false
     t.datetime "make_active_at", precision: nil
+    t.decimal "avg_rating", precision: 7, scale: 5, default: "0.0", null: false
+    t.integer "reviews_count", default: 0, null: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
@@ -1184,6 +1198,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
     t.index ["preferred_reimbursement_type_id"], name: "index_spree_return_items_on_preferred_reimbursement_type_id"
     t.index ["reimbursement_id"], name: "index_spree_return_items_on_reimbursement_id"
     t.index ["return_authorization_id"], name: "index_spree_return_items_on_return_authorization_id"
+  end
+
+  create_table "spree_reviews", id: :serial, force: :cascade do |t|
+    t.bigint "product_id"
+    t.string "name"
+    t.string "location"
+    t.integer "rating"
+    t.text "title"
+    t.text "review"
+    t.boolean "approved", default: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.bigint "user_id"
+    t.string "ip_address"
+    t.string "locale", default: "en"
+    t.boolean "show_identifier", default: true
+    t.index ["show_identifier"], name: "index_spree_reviews_on_show_identifier"
   end
 
   create_table "spree_role_users", force: :cascade do |t|
