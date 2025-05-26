@@ -9,12 +9,7 @@ module Spree
     include Spree::ThemeConcern
     include Spree::IntegrationsHelper if defined?(Spree::IntegrationsHelper)
 
-    helper 'spree/wishlist'
-    helper 'spree/currency'
-    helper 'spree/locale'
-    helper 'spree/storefront_locale'
-    helper 'spree/integrations' if defined?(Spree::IntegrationsHelper)
-    # include Spree::Storefront::DeviseConcern
+    include Spree::Storefront::DeviseConcern
 
     protected
 

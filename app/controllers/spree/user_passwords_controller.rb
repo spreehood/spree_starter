@@ -8,12 +8,7 @@ module Spree
     include Spree::ThemeConcern
     include Spree::IntegrationsHelper if defined?(Spree::IntegrationsHelper)
 
-    helper 'spree/wishlist'
-    helper 'spree/currency'
-    helper 'spree/locale'
-    helper 'spree/storefront_locale'
-    helper 'spree/integrations' if defined?(Spree::IntegrationsHelper)
-    # include Spree::Storefront::DeviseConcern
+    include Spree::Storefront::DeviseConcern
 
     protected
 
@@ -22,10 +17,6 @@ module Spree
     end
 
     private
-
-    def password_path(_resource_or_scope = nil)
-      send("#{Spree.user_class.model_name.singular_route_key}_password_path")
-    end
 
     def title
       Spree.t(:forgot_password)

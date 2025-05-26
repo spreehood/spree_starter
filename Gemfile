@@ -123,4 +123,4 @@ gem 'sentry-rails'
 gem 'sentry-sidekiq'
 
 gem 'spree_reviews', github: 'spreehood/spree_reviews', branch: 'feature/spree_5'
-# gem 'spree_reviews', path: '../../Spree/spree_reviews'
+gem 'spree_products_qa', github: 'spreehood/spree_products_qa', branch: 'feature/spree-5-support'

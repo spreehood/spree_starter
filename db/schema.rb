@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_26_135429) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -795,6 +795,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
     t.index ["variant_id"], name: "index_spree_prices_on_variant_id"
   end
 
+  create_table "spree_product_answers", id: :serial, force: :cascade do |t|
+    t.integer "product_question_id"
+    t.integer "user_id"
+    t.text "content"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.index ["product_question_id"], name: "index_spree_product_answers_on_product_question_id"
+  end
+
   create_table "spree_product_option_types", force: :cascade do |t|
     t.integer "position"
     t.bigint "product_id"
@@ -840,6 +849,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_122340) do
     t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_spree_product_property_translations_on_locale"
     t.index ["spree_product_property_id", "locale"], name: "unique_product_property_id_per_locale", unique: true
+  end
+
+  create_table "spree_product_questions", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.text "content"
+    t.boolean "is_visible", default: false
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.boolean "is_anonymous", default: false
+    t.string "email"
+    t.string "full_name"
+    t.index ["product_id"], name: "index_spree_product_questions_on_product_id"
   end
 
   create_table "spree_product_translations", force: :cascade do |t|
