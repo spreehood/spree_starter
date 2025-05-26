@@ -1,5 +1,13 @@
 module Spree
   class UserPasswordsController < ::Devise::PasswordsController
+    helper_method :title, :password_path
+    layout 'spree/storefront'
+
+    include Spree::Core::ControllerHelpers::Order
+    include Spree::LocaleUrls
+    include Spree::ThemeConcern
+    include Spree::IntegrationsHelper if defined?(Spree::IntegrationsHelper)
+
     include Spree::Storefront::DeviseConcern
 
     protected

@@ -121,3 +121,6 @@ gem "spree_i18n"
 gem 'sentry-ruby'
 gem 'sentry-rails'
 gem 'sentry-sidekiq'
+
+gem 'spree_reviews', github: 'spreehood/spree_reviews', branch: 'feature/spree_5'
+gem 'spree_products_qa', github: 'spreehood/spree_products_qa', branch: 'feature/spree-5-support'

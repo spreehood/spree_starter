@@ -1,3 +1,22 @@
+GIT
+  remote: https://github.com/spreehood/spree_products_qa.git
+  revision: 10e1796bf9c5f2dd8dfcc86d8e76bbcf95997a82
+  branch: feature/spree-5-support
+  specs:
+    spree_products_qa (0.0.2)
+      spree (>= 5.0.3)
+      spree_extension
+
+GIT
+  remote: https://github.com/spreehood/spree_reviews.git
+  revision: 770e4f92e214cb7802116676152ea2770e58ed20
+  branch: feature/spree_5
+  specs:
+    spree_reviews (4.0.0)
+      spree (>= 5.0.3)
+      spree_admin (>= 5.0.3)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -263,7 +282,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.12.0)
+    json (2.12.2)
     jsonapi-rspec (0.0.11)
       rspec-core
       rspec-expectations
@@ -789,7 +808,7 @@ GEM
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
     websocket (1.2.11)
-    websocket-driver (0.7.7)
+    websocket-driver (0.8.0)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -863,6 +882,8 @@ DEPENDENCIES
   spree_emails (~> 5.1.0.beta)
   spree_google_analytics (~> 1.0)
   spree_i18n
+  spree_products_qa!
+  spree_reviews!
   spree_sample (~> 5.1.0.beta)
   spree_storefront (~> 5.1.0.beta)
   spree_stripe (~> 1.2)
